@@ -8,8 +8,8 @@ mod config;
 mod token_cache;
 
 #[derive(Parser)]
-#[command(name = "justice-link")]
-#[command(about = "Salesforce data extraction tool")]
+#[command(name = "salesforce-exporter")]
+#[command(about = "Salesforce data export tool")]
 struct Cli {
     #[command(subcommand)]
     command: Commands,
@@ -70,7 +70,7 @@ async fn main() -> Result<(), Error> {
             } else {
                 return Err(anyhow::anyhow!(
                     "Either an object name or --config must be provided. \
-                     See 'justice-link export --help' for usage."
+                     See 'salesforce-exporter export --help' for usage."
                 ));
             }
         }

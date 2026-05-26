@@ -45,17 +45,17 @@ impl PersistentRefreshTokenAuth {
     fn cache_dir() -> anyhow::Result<PathBuf> {
         // Try standard cache dirs
         if let Ok(home) = std::env::var("HOME") {
-            return Ok(PathBuf::from(home).join(".cache").join("justice-link"));
+            return Ok(PathBuf::from(home).join(".cache").join("salesforce-exporter"));
         }
         if let Ok(userprofile) = std::env::var("USERPROFILE") {
             return Ok(PathBuf::from(userprofile)
                 .join("AppData")
                 .join("Local")
-                .join("justice-link")
+                .join("salesforce-exporter")
                 .join("cache"));
         }
         // Fallback to temp dir
-        Ok(std::env::temp_dir().join("justice-link"))
+        Ok(std::env::temp_dir().join("salesforce-exporter"))
     }
 
     async fn load_disk_cache(&self) -> Option<CachedToken> {

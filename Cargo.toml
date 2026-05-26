@@ -6,7 +6,7 @@ repository = "https://github.com/openjusticeok/salesforce-exporter"
 keyword = ["salesforce", "parquet"]
 categories = ["command-line-utilities"]
 readme = "README.md"
-license-file = "LICENSE.md"
+license-file = "LICENSE"
 edition = "2024"
 exclude = ["./*", "flake.*"]
 
